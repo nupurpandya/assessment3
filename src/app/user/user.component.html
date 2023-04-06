@@ -1,0 +1,2 @@
+<app-bankuser-list (toggleevent)="toggleForm($event)" [bankdata]="bankdata" (deleteevent)="delUser($event)" (editevent)="editUser($event)" [ngClass]=" toggle ? 'opacity05':'opacity1'"></app-bankuser-list>
+<app-bankuser-form  *ngIf="toggle" (closeevent)="closeForm($event)" (addevent)="addUser($event)"  [editbody]="editbody" (updateevent)="updateUser($event)" ></app-bankuser-form>

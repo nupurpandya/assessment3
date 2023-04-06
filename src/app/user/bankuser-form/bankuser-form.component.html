@@ -1,0 +1,44 @@
+<div class="userform">
+    
+    <h5 class="add-customer">ADD CUSTOMER</h5>
+    <hr>
+    <form [formGroup]="userForm" (ngSubmit)="condition?addUser():updateUser()">
+        <div class="form-group">
+          <label for="name" class="customer-name">NAME</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter Name" formControlName="username">
+        </div>
+        <div  class="validationmsg" *ngIf="userForm.get('username')?.errors?.['minlength']&& userForm.get('username')?.touched">
+            Length should be min 3 and max 25 characters
+       </div> 
+        <div class="form-group">
+          <label for="description" class="user-description">DESCRIPTION</label>
+          <input type="text" class="form-control" id="description" placeholder="Enter Description" formControlName="description">
+        </div>
+        <div  class="validationmsg" *ngIf="userForm.get('description')?.errors?.['minlength']&& userForm.get('description')?.touched">
+            Length should be min 3 and max 150 characters
+       </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput" class="user-status">STATUS</label>
+           <div style="width: 365px;height: 32px;">
+                <ng-select [items]="userstatus" bindLabel="name" bindValue="name" (change)="itemSelected($event)" [clearable]="false" formControlName="statusid"></ng-select>
+            </div>
+          </div>
+         
+          <div class="form-group">
+            <label for="rate" class="user-rate">RATE</label>
+            <input type="text" class="form-control" id="rate" placeholder="Enter Rate" formControlName="rate">
+          </div>
+          <div class="mb-3">
+            <span class="pattern validationmsg" *ngIf="userForm.get('rate')?.errors?.['pattern'] && userForm.get('rate')?.touched">Digits Only</span>
+          </div>
+          <div class="form-group">
+            <label for="balance" class="user-balance">BALANCE</label>
+            <input type="text" class="form-control" id="balance" placeholder="Enter Balance" formControlName="balance">
+          </div>
+          <div class="mb-3">
+            <span class="pattern validationmsg" *ngIf="userForm.get('balance')?.errors?.['pattern'] && userForm.get('balance')?.touched">Digits Only</span>
+          </div>
+          <button type="submit" class="btn btn-primary mx-2"  [disabled]="userForm.invalid">{{btn}}</button>
+          <button type="button" class="cancelbtn btn btn-primary" (click)="formClose()">Cancel</button>
+      </form>
+</div>

@@ -1,0 +1,38 @@
+<div class="d-flex m-4 justify-content-between">
+    <div style="height: 32px;width: 110px;">
+        <ng-select [items]="userstatus" bindLabel="name" bindValue="statusid"></ng-select>
+    </div>
+    <div>
+        <input type="text" placeholder="Search here..." class="search-input"  [(ngModel)]="searchTerm">
+        <button class="add-btn" (click)="openForm()">Add</button>
+    </div>
+</div>
+<div>
+    <table class="usertable">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>NAME</th>
+                <th>DESCRIPTION</th>
+                <th>STATUS</th>
+                <th>RATE</th>
+                <th>BALANCE</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let a of bankdata | searchdata:searchTerm">
+                <td class="userid">{{a.id}}</td>
+                <td class="username">{{a.username}}</td>
+                <td>{{a.description}}</td>
+                <td>{{a.statusid}}</td>
+                <td>{{a.rate}}</td>
+                <td>{{a.balance}}</td>
+                <td>
+                    <i class="editicon fa-solid fa-pen-to-square" style="color: #B3B4B7;" (click)="editUser(a.id)"></i>
+                    <i class="fa-solid fa-trash-can" style="color: #a62121;" (click)="delUser(a.id)"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

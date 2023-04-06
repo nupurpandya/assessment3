@@ -1,0 +1,20 @@
+.userform{
+    padding: 10px;
+    background-color: #E7E7E7;
+}
+.add-customer{
+    font-weight: 600;
+    font-size: 13px;
+    color: #464F60;
+}
+.customer-name,.user-description,.user-status,.user-rate,.user-balance{
+    font-weight: 600;
+    font-size: 13px;
+    color: #464F60;
+}
+.validationmsg{
+    color: red;
+}
+.cancelbtn{
+    background-color: #666666;
+}

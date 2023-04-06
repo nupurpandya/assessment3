@@ -1,0 +1,36 @@
+{
+  "bankdetails": [
+    {
+      "username": "Rafael ",
+      "description": "adsdfdfsdfdfsdfsdfsdfsdf",
+      "statusid": "Error",
+      "rate": "123",
+      "balance": "23234234",
+      "id": 1
+    },
+    {
+      "username": "Roger Federer",
+      "description": "abcdef",
+      "statusid": "Error",
+      "rate": "5666",
+      "balance": "64545",
+      "id": 2
+    },
+    {
+      "username": "Nupur",
+      "description": "123asdas",
+      "statusid": "Inactive",
+      "rate": "123",
+      "balance": "123",
+      "id": 3
+    },
+    {
+      "username": "Naomi Osaka",
+      "description": "abc",
+      "statusid": "Open",
+      "rate": "123",
+      "balance": "123",
+      "id": 4
+    }
+  ]
+}
